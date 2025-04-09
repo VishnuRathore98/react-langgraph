@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from langgraph.prebuilt.tool_executor import ToolExecutor
+from langgraph.prebuilt.tool_node import ToolNode
 
 from react.chains.reasoning_chain import react_reasoning_runnable, tools
 from react.state import AgentState
@@ -13,7 +13,7 @@ def run_agent_reasoning_engine(state: AgentState):
     return {"agent_outcome": agent_outcome}
 
 
-tool_executor = ToolExecutor(tools)
+tool_executor = ToolNode(tools)
 
 
 def execute_tools(state: AgentState):
